@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aqua;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    text-align: center;
+}
+
+header {
+    padding: 4% 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 45px;
+}
+
+table {
+    width: 70%;
+    margin: 3% auto;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+table th,
+td {
+    font-size: 25px;
+    border: 1px solid #000;
+    margin: 0;
+}
+
+table th {
+    background-color: crimson;
+}
+
+table td {
+    background-color: aquamarine;
+}
+
+main button {
+    padding: 10px 15px;
+    border-radius: 7px;
+    background-color: crimson;
+    font-size: 18px;
+}
+
+main #myDIV {
+    display: none;
+    width: 20%;
+    margin: 0 auto;
+}
+
+#myDIV input {
+    margin: 2% 0;
+    background-color: #fff;
+}
+
+#myDIV label {
+    text-align: left;
+    width: 100%;
+}
