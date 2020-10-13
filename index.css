@@ -14,7 +14,7 @@ main {
 }
 
 header {
-    padding: 4% 0;
+    padding: 1% 0;
     text-align: center;
 }
 
@@ -44,17 +44,30 @@ table td {
     background-color: aquamarine;
 }
 
-main button {
+main #btn_add,
+button {
     padding: 10px 15px;
     border-radius: 7px;
     background-color: crimson;
     font-size: 18px;
+    border: none;
+    cursor: pointer;
 }
 
 main #myDIV {
-    display: none;
     width: 20%;
-    margin: 0 auto;
+    margin: 2% auto;
+}
+
+main .myform {
+    display: none;
+}
+
+main fieldset,
+label,
+legend,
+form {
+    background-color: burlywood;
 }
 
 #myDIV input {
@@ -65,4 +78,8 @@ main #myDIV {
 #myDIV label {
     text-align: left;
     width: 100%;
+}
+
+.btn_delete {
+    padding: 5px 10px;
 }

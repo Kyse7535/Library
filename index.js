@@ -35,18 +35,38 @@ let book2 = new Book(
     "livre1 azertyyuipkpoc,znconolzncol",
     "auteur1 nlihlhblibl",
     50,
-    "yes"
+    "no"
 );
 let book3 = new Book(
     "livre1 azertyyuipkpoc,znconolzncol",
     "auteur1 nlihlhblibl",
     50,
-    "yes"
+    "no"
 );
-library.splice(0, book1, book2, book3);
+
+library.push(book1);
+library.push(book2);
+library.push(book3);
+let formulaire = document.getElementById("myDIV");
+let btn_submit = document.getElementById("btn_submit");
+btn_submit.addEventListener('click', function() {
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let page = document.getElementById("page").value;
+    let read = document.getElementById("read").value;
+
+    let new_book = new Book(title, author, page, read);
+
+    library.push(new_book);
+    afficher();
+});
+
 afficher();
 
-function addBookToLibrary() {}
+
+function addBookToLibrary(book) {
+    library.push(book);
+}
 
 function isFunction(variableToCheck) {
     //If our variable is an instance of "Function"
@@ -58,7 +78,8 @@ function isFunction(variableToCheck) {
 
 function afficher() {
     let table = document.getElementById("library");
-    for (let book in library) {
+    table.textContent = "";
+    for (book in library) {
         let tr = document.createElement("tr");
         myBook = library[book];
         for (attr in myBook) {
@@ -69,27 +90,58 @@ function afficher() {
                 tr.append(td);
             }
         }
-        table.append(tr);
+        create_button_delete(book, tr, table);
+        create_button_read(book, tr, table);
     }
+    remove_book();
+    change_read_status();
 }
 
-let btn_add = document.getElementById("btn-add");
-let formulaire = document.getElementById("myDIV");
-formulaire.style.display = "none";
-
-btn_add.addEventListener("click", afficher_form);
-
-function afficher_form() {
-    if (formulaire.style.display == "none") {
-        formulaire.style.display = "block";
-    } else {
-        formulaire.style.display = "none";
-    }
+/**
+ * 
+ */
+function remove_book() {
+    let btn_delete = document.getElementsByClassName("btn_delete");
+    btn_delete = Array.from(btn_delete);
+    btn_delete.forEach(btn_delete => {
+        btn_delete.addEventListener('click', function() {
+            let id = btn_delete.getAttribute("id");
+            library.splice(id, 1);
+            afficher();
+        });
+    });
 }
 
-let btn_submit = document.getElementById('btn_submit');
-btn_submit.addEventListener('click', check);
+function create_button_delete(index, line, table) {
+    let td_button = document.createElement('td');
+    td_button.innerHTML = "<button> Supprimer</button>";
+    td_button.setAttribute("id", index);
+    td_button.classList.add("btn_delete");
+    line.append(td_button);
+    table.append(line);
+}
 
-function check() {
+function create_button_read(index, line, table) {
+    let td = document.createElement("td");
+    td.innerHTML = "<button> (not)read</button>";
+    td.classList.add("btn_read");
+    td.setAttribute("id", index);
+    line.append(td);
+    table.append(line);
+}
 
+function change_read_status() {
+    let btn_read = document.getElementsByClassName('btn_read');
+    btn_read = Array.from(btn_read);
+    btn_read.forEach(btn_read => {
+        btn_read.addEventListener('click', function() {
+            let id = btn_read.getAttribute('id');
+            if (library[id]["read"] === "yes") {
+                library[id]["read"] = "no";
+            } else {
+                library[id]["read"] = "yes";
+            }
+            afficher();
+        });
+    });
 }
