@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: aqua;
+    background-color: #fff;
+    color: #414a51;
 }
 
 body {
@@ -26,18 +27,18 @@ table {
     width: 70%;
     margin: 3% auto;
     border-collapse: collapse;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
 }
 
 table th,
 td {
     font-size: 25px;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     margin: 0;
 }
 
 table th {
-    background-color: crimson;
+    background-color: #6495ed;
 }
 
 table td {
@@ -48,7 +49,7 @@ main #btn_add,
 button {
     padding: 10px 15px;
     border-radius: 7px;
-    background-color: crimson;
+    background-color: #09c;
     font-size: 18px;
     border: none;
     cursor: pointer;
@@ -57,6 +58,7 @@ button {
 main #myDIV {
     width: 20%;
     margin: 2% auto;
+    border: 1px solid #ccc;
 }
 
 main .myform {
@@ -67,7 +69,7 @@ main fieldset,
 label,
 legend,
 form {
-    background-color: burlywood;
+    background-color: #87cefa;
 }
 
 #myDIV input {
