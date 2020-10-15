@@ -22,8 +22,9 @@ Book.prototype.info = function() {
         );
     }
 };
-
 let library = [];
+
+
 
 let book1 = new Book(
     "livre1 azertyyuipkpoc,znconolzncol",
@@ -44,9 +45,9 @@ let book3 = new Book(
     "no"
 );
 
-library.push(book1);
-library.push(book2);
-library.push(book3);
+//library.push(book1);
+//library.push(book2);
+//library.push(book3);
 let formulaire = document.getElementById("myDIV");
 let btn_submit = document.getElementById("btn_submit");
 btn_submit.addEventListener('click', function() {
@@ -95,11 +96,10 @@ function afficher() {
     }
     remove_book();
     change_read_status();
+
 }
 
-/**
- * 
- */
+
 function remove_book() {
     let btn_delete = document.getElementsByClassName("btn_delete");
     btn_delete = Array.from(btn_delete);
@@ -144,4 +144,8 @@ function change_read_status() {
             afficher();
         });
     });
+}
+
+function save_library() {
+    localStorage.setItem("library", library);
 }
