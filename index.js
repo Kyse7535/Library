@@ -40,6 +40,15 @@ btn_submit.addEventListener('click', function() {
 });
 
 let btn_add = document.getElementById('btn_add');
+formulaire.style.display = "none";
+btn_add.addEventListener('click', function() {
+
+    if (formulaire.style.display === "none") {
+        formulaire.style.display = "block";
+    } else {
+        formulaire.style.display = "none";
+    }
+})
 
 afficher();
 
