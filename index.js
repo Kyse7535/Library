@@ -25,29 +25,6 @@ Book.prototype.info = function() {
 let library = [];
 
 
-
-let book1 = new Book(
-    "livre1 azertyyuipkpoc,znconolzncol",
-    "auteur1 nlihlhblibl",
-    50,
-    "yes"
-);
-let book2 = new Book(
-    "livre1 azertyyuipkpoc,znconolzncol",
-    "auteur1 nlihlhblibl",
-    50,
-    "no"
-);
-let book3 = new Book(
-    "livre1 azertyyuipkpoc,znconolzncol",
-    "auteur1 nlihlhblibl",
-    50,
-    "no"
-);
-
-//library.push(book1);
-//library.push(book2);
-//library.push(book3);
 let formulaire = document.getElementById("myDIV");
 let btn_submit = document.getElementById("btn_submit");
 btn_submit.addEventListener('click', function() {
@@ -61,6 +38,8 @@ btn_submit.addEventListener('click', function() {
     library.push(new_book);
     afficher();
 });
+
+let btn_add = document.getElementById('btn_add');
 
 afficher();
 
